@@ -1,0 +1,183 @@
+from tkinter import *
+from tkinter.font import ROMAN
+from typing import no_type_check_decorator
+from PIL import Image, ImageTk
+
+    
+    
+def open_Toplevel9():
+    top9 = Toplevel()
+    top9.geometry('1920x1080')
+    load9 = Image.open('lose.png')
+    resize9 = load9.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render9 = ImageTk.PhotoImage(resize9)
+    img19 = Label(top9, image=render9)
+    img19.place(x=0, y=0)
+    play2 = Button(top9, text='Play Again', bg='#A76E4D', fg = '#FF7F27', command=openroot)
+    play2.config(font=('Vivaldi', 30, 'bold'))
+    play2.config(borderwidth=20, relief='raised')
+    play2.place(x=950, y=700)
+    
+
+
+    top9.mainloop()
+
+
+def open_Toplevel7():
+    
+    top7 = Toplevel()
+    top7.geometry('1920x1080')
+    load7 = Image.open('vspage.png')
+    resize7 = load7.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render7 = ImageTk.PhotoImage(resize7)
+    img17 = Label(top7, image=render7)
+    img17.place(x=0, y=0)
+    def open():
+        top7.after(000, lambda: top7.withdraw())
+        top8 = Toplevel()
+        top8.geometry('1920x1080')
+        load8 = Image.open('battle.png')
+        resize8 = load8.resize((1920, 1080), Image.Resampling.LANCZOS)
+        render8 = ImageTk.PhotoImage(resize8)
+        img18 = Label(top8, image=render8)
+        img18.place(x=0, y=0)
+        lose = Button(top8, text='travel to next page', bg='#A76E4D', fg = '#FF7F27', command=open_Toplevel9)
+        lose.config(font=('Vivaldi', 30, 'bold'))
+        lose.config(borderwidth=20, relief='raised')
+        lose.place(x=950, y=750)
+        top8.after(2000, lambda: top8.deiconify())
+        top8.mainloop()
+   
+    top7.after(2000, lambda: open()) 
+    
+    top7.mainloop()
+
+   
+def open_Toplevel6():
+    top6 = Toplevel()
+    top6.geometry('1920x1080')
+    load6 = Image.open('war.png')
+    resize6 = load6.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render6 = ImageTk.PhotoImage(resize6)
+    img16 = Label(top6, image=render6)
+    img16.place(x=0, y=0)
+
+
+    top6.mainloop()
+def open_Toplevel5():
+    top5 = Toplevel()
+    top5.geometry('1920x1080')
+    load5 = Image.open('rob page.png')
+    resize5 = load5.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render5 = ImageTk.PhotoImage(resize5)
+    img15 = Label(top5, image=render5)
+    img15.place(x=0, y=0)
+    photo2 = PhotoImage(file = "egg.png")
+    pbutton = Button(top5, text = 'Click Me !', image = photo2)
+    pbutton.config(command=open_Toplevel6)
+    pbutton.config(height=10, width=10)
+    pbutton.place(x=1087, y=396)
+    top5.mainloop()
+
+
+def open_Toplevel4():
+    top4 = Toplevel()
+    top4.geometry('1920x1080')
+    load4 = Image.open('fight.png')
+    resize4 = load4.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render4 = ImageTk.PhotoImage(resize4)
+    img14 = Label(top4, image=render4)
+    img14.place(x=0, y=0)
+
+    top4.mainloop()
+
+def open_Toplevel3():
+    top3 = Toplevel()
+    top3.geometry('1920x1080')
+    load3 = Image.open('page2p2.png')
+    resize3 = load3.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render3 = ImageTk.PhotoImage(resize3)
+    img13 = Label(top3, image=render3)
+    img13.place(x=0, y=0)
+    fight = Button(top3, text='Fight', bg='#A76E4D', fg = '#FF7F27', command=open_Toplevel4 )
+    fight.config(font=('Ink Free', 50, 'bold'))
+    fight.config(borderwidth=25, relief='raised')
+    fight.place(x=800, y=200)
+
+    rob = Button(top3, text='Rob', bg='#A76E4D', fg = '#FF7F27', command=open_Toplevel5)
+    rob.config(font=('Ink Free', 50, 'bold'))
+    rob.config(borderwidth=25, relief='raised')
+    rob.place(x=1350, y=200)
+
+    top3.mainloop()
+
+def open_Toplevel2():
+    top2 = Toplevel()
+    top2.geometry('1920x1080')
+    def placelabel():
+        nopelabel=Label( top2, text='This task cannot be completed at this time', bg='light grey', fg='red' )
+        nopelabel.config(font=('ROMAN', 25 ))
+        nopelabel.place(x=600, y=900)
+        nopelabel.after(3000, lambda: nopelabel.destroy())
+
+#Automatically close the window after 3 seconds
+
+        '''top2.after(1000, lambda: open())'''
+        
+    load3 = Image.open('cavewiz.png')
+    resize3 = load3.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render3 = ImageTk.PhotoImage(resize3)
+    img13 = Label(top2, image=render3)
+    img13.place(x=0, y=0)
+    
+    accept2 = Button(top2, text='Accept', bg='light grey', command=open_Toplevel7)
+    accept2.config(font=('Ink Free', 25, 'bold'))
+    accept2.config(borderwidth=15, relief='raised')
+    accept2.place(x=900, y=150)
+    decline2 = Button(top2, text="Decline", bg='light grey',command=placelabel)
+    decline2.config(font=('Ink Free', 25, 'bold'))
+    decline2.config(borderwidth=15, relief='raised')
+    decline2.place(x=1150, y=150)
+
+    top2.mainloop()
+
+
+
+def open_Toplevel1():
+    top1 = Toplevel()
+    top1.geometry('1920x1080')
+    load2 = Image.open('page2p1.png')
+    resize2 = load2.resize((1920, 1080), Image.Resampling.LANCZOS)
+    render2 = ImageTk.PhotoImage(resize2)
+    img12 = Label(top1, image=render2)
+    img12.place(x=0, y=0)
+    accept = Button(top1, text='Accept', bg='#A76E4D', fg = '#FF7F27', command=open_Toplevel3 )
+    accept.config(font=('Ink Free', 50, 'bold'))
+    accept.config(borderwidth=25, relief='raised')
+    accept.place(x=800, y=200)
+
+    decline = Button(top1, text='Decline', bg='#A76E4D', fg = '#FF7F27', command=open_Toplevel2)
+    decline.config(font=('Ink Free', 50, 'bold'))
+    decline.config(borderwidth=25, relief='raised')
+    decline.place(x=1350, y=200)
+
+    top1.mainloop()
+    
+
+root = Tk()
+root.geometry('1920x1080')
+root.title('Medieval Quest')
+load = Image.open('Background.png')
+resize = load.resize((1920, 1080), Image.Resampling.LANCZOS)
+render = ImageTk.PhotoImage(resize)
+img1 = Label(root, image=render)
+img1.place(x=0, y=0)
+start = Button(root, text='         Start         ',bg = '#A76E4D', fg = '#FF7F27', command=open_Toplevel1 )
+start.config(font=('Ink Free', 50, 'bold'))
+start.config(borderwidth=10, relief='raised')
+start.place(x=690, y=475)
+
+
+
+
+root.mainloop()
